@@ -4,8 +4,8 @@
   "description": "Fantasy Grounds Rulesets",
   "scripts": {
     "test": "node scripts/test.js",
-    "install": "node scripts/install.js",
-    "install:dev": "node scripts/install-dev.js"
+    "make:install": "node scripts/install.js",
+    "make:install:dev": "node scripts/install-dev.js"
   },
   "author": "Adrien Rault <adrien@rault.io>",
   "license": "MIT",

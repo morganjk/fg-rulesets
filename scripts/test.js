@@ -2,7 +2,7 @@ const { readFile } = require('fs').promises
 const { resolve, basename } = require('path')
 const xmllint = require('xmllint')
 const chalk = require('chalk')
-const { getDirectories } = require('../scripts/helpers')
+const { getDirectories } = require('./helpers')
 
 async function validate (dir) {
   const result = xmllint.validateXML({

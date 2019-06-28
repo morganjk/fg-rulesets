@@ -1,0 +1,20 @@
+{
+  "name": "fg-rulesets",
+  "version": "0.0.1",
+  "description": "Fantasy Grounds Rulesets",
+  "scripts": {
+    "test": "node scripts/test.js",
+    "install": "node scripts/install.js",
+    "install:dev": "node scripts/install-dev.js"
+  },
+  "author": "Adrien Rault <adrien@rault.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "standard": "^12.0.1",
+    "xmllint": "^0.1.1"
+  },
+  "dependencies": {
+    "zip-local": "^0.3.4"
+  }
+}

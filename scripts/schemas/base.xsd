@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="root" type="Root" />
+
+  <xs:complexType name="Root">
+    <xs:sequence>
+      <xs:element name="announcement" type="Announcement" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="description" type="Description" minOccurs="1" maxOccurs="1" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="icon" type="Icon" />
+        <xs:element name="importinfo" type="ImportInfo" />
+        <xs:element name="importruleset" type="ImportRuleset" />
+        <xs:element name="includefile" type="IncludeFile" />
+        <xs:element name="script" type="Script" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="version" type="xs:decimal" use="required" />
+    <xs:attribute name="release" type="xs:decimal" use="required" />
+    <xs:attribute name="logo" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Announcement">
+    <xs:attribute name="text" type="xs:string" use="required" />
+    <xs:attribute name="font" type="xs:string" use="required" />
+    <xs:attribute name="icon" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Description">
+    <xs:sequence>
+      <xs:element name="text" minOccurs="1" maxOccurs="1" />
+      <xs:element name="author" minOccurs="1" maxOccurs="1" />
+      <xs:element name="website" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IncludeFile">
+    <xs:attribute name="source" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Script">
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="file" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="ImportInfo">
+    <xs:sequence>
+      <xs:element name="acceptfrom" type="AcceptFrom" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AcceptFrom">
+    <xs:attribute name="ruleset" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="ImportRuleset">
+    <xs:attribute name="source" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Icon">
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="file" type="xs:string" use="required" />
+  </xs:complexType>
+</xs:schema>

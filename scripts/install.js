@@ -2,7 +2,7 @@ const { resolve, basename } = require('path')
 const { getDirectories, tryUnlink, zip } = require('./helpers')
 
 ;(async () => {
-  const srcDir = resolve(__dirname, '../rulesets')
+  const srcDir = resolve(__dirname, '../dist')
   const installDir = resolve(process.env.appdata, 'Fantasy Grounds/rulesets')
 
   const rulesets = await getDirectories(srcDir)

@@ -19,7 +19,12 @@ async function validate (dir) {
 }
 
 ;(async () => {
-  const dirs = await getDirectories(resolve(__dirname, '../rulesets'))
+  const dirs = await getDirectories(resolve(__dirname, '../dist'))
+
+  if (dirs.length === 0) {
+    throw new Error('No ruleset in dist')
+  }
+
   for (const dir of dirs) {
     console.log(basename(dir))
     await validate(dir)

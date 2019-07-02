@@ -4,6 +4,8 @@
   "description": "Fantasy Grounds Rulesets",
   "scripts": {
     "test": "node scripts/test.js",
+    "build": "node scripts/build.js",
+    "make": "node scripts/build.js",
     "make:install": "node scripts/install.js",
     "make:install:dev": "node scripts/install-dev.js"
   },
@@ -15,6 +17,8 @@
     "xmllint": "^0.1.1"
   },
   "dependencies": {
+    "glob": "^7.1.4",
+    "pug": "^2.0.4",
     "zip-local": "^0.3.4"
   }
 }

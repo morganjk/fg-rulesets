@@ -1,2 +1,4 @@
 node_modules
 official_rulesets/*
+dist/*
+!.gitkeep
